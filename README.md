@@ -1,49 +1,78 @@
-## LSB Image Steganography
-# Yazılım Güvenliği dersi dönem ödevi — Python ile görsel tabanlı steganografi uygulaması.
+# 🛡️ LSB Image Steganography
+## Yazılım Güvenliği Dersi Dönem Ödevi — Python ile Görsel Tabanlı Stenografi Uygulaması
 
-## Proje Hakkında
-Bu proje, LSB (Least Significant Bit) yöntemi kullanarak bir görsel dosyasının piksel verilerine gizli metin mesajı gömmek ve bu mesajı geri çıkarmak amacıyla geliştirilmiştir. Google Colab ortamında çalışacak şekilde tasarlanmıştır.
+### 📌 Proje Hakkında
+Bu proje, **LSB (Least Significant Bit)** yöntemi kullanarak bir görsel dosyasının piksel verilerine gizli metin mesajı gömmek ve bu mesajı geri çıkarmak amacıyla geliştirilmiştir. Proje, özellikle **Google Colab** ortamında çalışacak şekilde optimize edilmiştir.
 
-## Steganografi Nedir?
-Steganografi, bir bilginin (metin, ses, görsel vb.) başka bir bilginin içine gizlenerek iletilmesini inceleyen bilim dalıdır. Kriptografiden farkı şudur: kriptografi verinin içeriğini şifrelerken, steganografi verinin var olduğunu gizler.
-# LSB Yöntemi
-Her pikselin RGB değeri 8 bit ile ifade edilir. Bu 8 bitin en az anlamlı biti (LSB) değiştirildiğinde görselde gözle görülür bir fark oluşmaz. Bu özelliği kullanarak piksel başına 1 bit veri gizlenebilir.
-Örnek piksel değeri : 11001010  (202)
-Gizlenecek bit      : 1
-Sonuç               : 11001011  (203)  ← fark edilmez
+---
 
- ## 📁 Proje Yapısı
-LSB-Image-Steganography/
+### 🧠 Stenografi Nedir?
+Stenografi, bir bilginin (metin, ses, görsel vb.) başka bir bilginin içine gizlenerek iletilmesini inceleyen bilim dalıdır. 
+
+> **Kriptografiden Farkı:** Kriptografi verinin içeriğini şifreleyerek okunmaz hale getirirken; stenografi, verinin var olduğunu tamamen gizleyerek dikkat çekmemeyi amaçlar.
+
+#### LSB (En Az Öneme Sahip Bit) Yöntemi
+Dijital görsellerde her pikselin RGB değerleri 8 bit (0-255 arası) ile ifade edilir. Bu 8 bitin en sağındaki bit (LSB) değiştirildiğinde, renk değerindeki değişim insan gözüyle fark edilemeyecek kadar küçüktür.
+
+**Örnek:**
+* **Orijinal Piksel (Kırmızı):** `11001010` (202)
+* **Gizlenecek Bit:** `1`
+* **Yeni Piksel:** `11001011` (203)  
+* *Sonuç: Görselde herhangi bir bozulma veya renk farkı oluşmaz.*
+
+---
+
+### 📁 Proje Yapısı
+Ödev talimatlarına uygun olarak hazırlanan klasör yapısı:
+
+```text
+SumeyyePolat/
 │
-├── steganography.ipynb   # Ana Colab notebook 
+├── steganography.ipynb   # Tüm Python kodlarını içeren notebook
+├── input.png             # Orijinal (temiz) görsel dosyası
+├── stego_output.png      # Mesaj gömülmüş (şifreli) görsel dosyası
+└── README.md             # Proje dökümantasyonu
+### 🚀 Kurulum ve Kullanım
+Uygulamayı Google Colab üzerinde şu adımlarla çalıştırabilirsiniz:
 
-├── input.png             # Giriş görseli (örnek)
+1. **Notebook'u Açın:** `steganography.ipynb` dosyasını Google Colab ortamına yükleyin.
+2. **Blokları Sırayla Çalıştırın:**
 
-├── output.png            # Encode edilmiş çıktı görseli
+| Blok | İşlev |
+| :--- | :--- |
+| **Blok 1** | Gerekli kütüphanelerin (OpenCV, NumPy, PIL) yüklenmesi. |
+| **Blok 2** | Görselin sisteme yüklenmesi ve PNG formatına dönüştürülmesi. |
+| **Blok 3** | **Encode:** Mesajın piksellerin LSB katmanına gizlenmesi. |
+| **Blok 4** | **Decode:** Görselden gizli mesajın ayıklanması. |
+| **Blok 5** | CLI arayüzü ile işlemin test edilmesi ve dosyanın indirilmesi. |
 
-└── README.md
+---
 
-##  Kurulum ve Kullanım
-Google Colab'da Çalıştırma
+### ⚙️ Kullanılan Teknolojiler
+* **Python 3**
+* **OpenCV:** Piksel düzeyinde erişim ve görüntü işleme.
+* **Pillow (PIL):** Format dönüştürme ve görsel yönetimi.
+* **NumPy:** Verilerin matris bazlı manipülasyonu.
 
-steganography.ipynb dosyasını Google Colab'da aç
-Blokları sırayla çalıştır:
+---
 
-BlokİşlevBlok 1Kütüphaneleri import etBlok 2Görselini yükleBlok 3Encode fonksiyonunu tanımlaBlok 4Decode fonksiyonunu tanımlaBlok 5AGörsele mesaj göm (Encode)Blok 5BGörselden mesaj çıkar (Decode)Blok 6Encode/Decode testiBlok 7Çıktı görselini indir
+### 📊 Değerlendirme Kriterleri
+| Kriter | Puan |
+| :--- | :--- |
+| Teorik kısmın içeriği ve açıklığı | 20 |
+| Kodun doğruluğu ve çalışabilirliği | 30 |
+| Encode / Decode fonksiyonlarının başarımı | 30 |
+| Raporun düzeni ve içeriği | 20 |
 
-##  Kullanılan Teknolojiler
+---
 
-Python 3
-Pillow (PIL) — görsel işleme
-NumPy — piksel dizisi manipülasyonu
-Google Colab — çalışma ortamı
+### ⚠️ Önemli Sınırlamalar
+* **Format Desteği:** Veri bütünlüğü için yalnızca **PNG** formatı kullanılmalıdır. JPG formatı LSB verilerini bozan "kayıplı" bir sıkıştırma yapar.
+* **Kapasite:** Gömülebilecek maksimum mesaj uzunluğu şu formülle hesaplanır:
 
+$$\frac{\text{Piksel Sayısı} \times 3}{8} = \text{Maksimum Karakter Sayısı}$$
 
-
-⚠️ ##  Sınırlamalar
-
-Yalnızca PNG formatı desteklenir (JPG sıkıştırması LSB verilerini bozar)
-Görselin boyutu, gömülebilecek maksimum mesaj uzunluğunu belirler
-Piksel sayısı × 3 ÷ 8 = maksimum karakter sayısı
-
-# Sümeyye Polat 
+---
+**Hazırlayan:** Sümeyye Polat  
+**Ders:** Yazılım Güvenliği  
+**Kurum:** Kırklareli Üniversitesi
