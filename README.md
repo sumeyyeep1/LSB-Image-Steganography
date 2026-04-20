@@ -15,9 +15,12 @@ Sonuç               : 11001011  (203)  ← fark edilmez
  ## 📁 Proje Yapısı
 LSB-Image-Steganography/
 │
-├── steganography.ipynb   # Ana Colab notebook
+├── steganography.ipynb   # Ana Colab notebook 
+
 ├── input.png             # Giriş görseli (örnek)
+
 ├── output.png            # Encode edilmiş çıktı görseli
+
 └── README.md
 
 ##  Kurulum ve Kullanım
