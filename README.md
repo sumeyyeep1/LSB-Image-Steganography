@@ -25,7 +25,6 @@ Dijital görsellerde her pikselin RGB değerleri 8 bit (0-255 arası) ile ifade 
 ### 📁 Proje Yapısı
 Ödev talimatlarına uygun olarak hazırlanan klasör yapısı:
 
-```text
 SumeyyePolat/
 │
 ├── steganography.ipynb   # Tüm Python kodlarını içeren notebook
