@@ -1,5 +1,5 @@
-##LSB Image Steganography
-Yazılım Güvenliği dersi dönem ödevi — Python ile görsel tabanlı steganografi uygulaması.
+## LSB Image Steganography
+# Yazılım Güvenliği dersi dönem ödevi — Python ile görsel tabanlı steganografi uygulaması.
 
 ## Proje Hakkında
 Bu proje, LSB (Least Significant Bit) yöntemi kullanarak bir görsel dosyasının piksel verilerine gizli metin mesajı gömmek ve bu mesajı geri çıkarmak amacıyla geliştirilmiştir. Google Colab ortamında çalışacak şekilde tasarlanmıştır.
@@ -43,4 +43,4 @@ Yalnızca PNG formatı desteklenir (JPG sıkıştırması LSB verilerini bozar)
 Görselin boyutu, gömülebilecek maksimum mesaj uzunluğunu belirler
 Piksel sayısı × 3 ÷ 8 = maksimum karakter sayısı
 
-#Sümeyye Polat 
+# Sümeyye Polat 
